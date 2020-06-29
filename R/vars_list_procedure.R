@@ -3,7 +3,6 @@
 #' @import stringr
 #' @import dplyr
 #' @import tidyr
-#' @export
 vars_list_procedure = function(data){
 
   # Variáveis

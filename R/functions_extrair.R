@@ -3,7 +3,6 @@
 #' @import dplyr
 #' @import tidyr
 #' @import stringr
-#' @export
 inf_to_NA = function(x){
 
   for(i in 1:(length(x))){
@@ -14,7 +13,6 @@ inf_to_NA = function(x){
   return(x)
 }
 
-#' @export
 extrair_mean = function(data, variable, origin){
   data %>%
     mutate(Data = as.Date(as.integer(Data), origin = origin)) %>%
@@ -26,7 +24,6 @@ extrair_mean = function(data, variable, origin){
     pull(new_var)
 }
 
-#' @export
 extrair_max = function(data, variable, origin){
   data %>%
     mutate(Data = as.Date(as.integer(Data), origin = origin)) %>%
@@ -38,7 +35,6 @@ extrair_max = function(data, variable, origin){
     pull(new_var)
 }
 
-#' @export
 extrair_min = function(data, variable, origin){
   data %>%
     mutate(Data = as.Date(as.integer(Data), origin = origin)) %>%
@@ -50,7 +46,6 @@ extrair_min = function(data, variable, origin){
     pull(new_var)
 }
 
-#' @export
 extrair_sum = function(data, variable, origin){
   data %>%
     mutate(Data = as.Date(as.integer(Data), origin = origin)) %>%
@@ -62,7 +57,6 @@ extrair_sum = function(data, variable, origin){
     pull(new_var)
 }
 
-#' @export
 extrair_var = function(data, variable, origin){
 
   if((str_count(variable, c("MÁXIMA", "MAXIMA")) %>%
