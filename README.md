@@ -11,7 +11,7 @@ Visual checking is often required so as validation.
 
 ### Solution
 
-The under development project here will basically help on the clean process from raw weather data.
+The **under development** project here will basically help on the clean process from raw weather data.
 
 It will be done using three sources (if it is available):
 
@@ -19,8 +19,20 @@ It will be done using three sources (if it is available):
 2. INMET conventional station: [Latest](http://www.inmet.gov.br/portal/index.php?r=estacoes/estacoesConvencionais) or [Historical](http://www.inmet.gov.br/portal/index.php?r=bdmep/bdmep)
 3. [Xavier gridded weather data](https://github.com/AlexandreCandidoXavier/ExemplosPython)
 
-Hope it could be a R package in the future
+### Actual Development
 
+Until now it's possible to read data from automatic weather station as `.xls`. Example `.xls` files are [attached](https://github.com/FabioSeixas/weatherData/tree/master/inst/extdata). 
+
+``` r
+install.packages("devtools")
+devtools::install_github("FabioSeixas/weatherData")
+
+library(weatherData)
+
+# Put the xls files in a folder and run the following
+directory = choose.dir("path/to/xls/files")
+data = read_automatic(directory)
+```
 
 ### OBS
 
