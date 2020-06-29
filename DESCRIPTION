@@ -1,0 +1,22 @@
+Package: weatherData
+Title: A tool to merge tabular climate data from different sources
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Fábio",
+           family = "Seixas",
+           role = c("aut", "cre"),
+           email = "flscosta94@gmail.com")
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Imports:
+    dplyr,
+    tidyr,
+    stringr,
+    readxl,
+    here
+Depends: 
+    R (>= 2.10)
