@@ -3,7 +3,7 @@
 #' @import tidyr
 #' @import readxl
 #' @export
-clean_automatic = function(directory){
+read_automatic = function(directory){
 
   for(data_file in dir(directory)){
     process_xls_data(paste0(directory, "\\",
