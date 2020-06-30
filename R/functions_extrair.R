@@ -6,7 +6,7 @@
 inf_to_NA = function(x){
 
   for(i in 1:(length(x))){
-    if(x[i] %in% c(Inf, -Inf)){
+    if(x[i] %in% c(Inf, -Inf, NaN)){
       x[i] = NA
     }
   }

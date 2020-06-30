@@ -17,6 +17,8 @@ Imports:
     tidyr,
     stringr,
     readxl,
-    here
+    here,
+    lubridate,
+    tidyselect
 Depends: 
     R (>= 2.10)
