@@ -3,7 +3,7 @@
 #' @import tidyr
 #' @import readxl
 #' @export
-read_automatic = function(directory){
+read_automatic = function(directory, dates_complete = FALSE){
 
   for(data_file in dir(directory)){
     process_xls_data(paste0(directory, "\\",
@@ -23,6 +23,8 @@ read_automatic = function(directory){
                     "terminou de ser processado"))
     })
   }
+
+  dates_check_procedure(final_data, dates_complete)
 
   return(final_data)
 }

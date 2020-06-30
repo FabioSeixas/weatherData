@@ -17,6 +17,7 @@ Imports:
     tidyr,
     stringr,
     readxl,
+    readr,
     here,
     lubridate,
     tidyselect
