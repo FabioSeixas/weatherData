@@ -1,25 +1,28 @@
 context("Combine Data")
 
+# Data required
 auto = read_automatic("D:/weatherData/tests/testdata/xls")
-conv = read_conventional("D:/weatherData/tests/testdata/case1/conv.txt")
+conv = read_conventional("D:/weatherData/tests/testdata/conv.txt")
 xavier = read_xavier("D:/weatherData/tests/testdata/xavier.csv")
 
-library(waldo)
-library(weatherData)
 
 expect_equal_tibbles = function(x, y, test_n,
                                 add_rows = F, add_cols = F){
-  current = combine_data(x, y, add_rows, add_cols)
-  expected = select(read_csv(paste0("D:/weatherData/tests/testdata/case1/test",
-                         test_n, ".csv")),
-                    names(current))
-  print(paste("TESTE", test_n))
-  print(current)
-  print(expected)
+
+  current = combine_data(x, y,
+                         add_rows = add_rows,
+                         add_cols = add_cols)
+
+  path = paste0("D:/weatherData/tests/testdata/ref/test", test_n, ".csv")
+  expected = read_csv(path)
+  expected = expected %>% dplyr::select(names(current))
+
   expect_equal(current,
                expected,
                check.attributes = F)
 }
+
+
 
 test_that("combination: y starts before x", {
 
