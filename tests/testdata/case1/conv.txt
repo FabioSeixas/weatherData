@@ -1,0 +1,27 @@
+﻿--------------------
+BDMEP - INMET
+--------------------
+Estação           : 
+Latitude  (graus) : 
+Longitude (graus) : 
+Altitude  (metros): 
+Estação Operante
+Inicio de operação: 01/01/1958
+Periodo solicitado dos dados: 01/01/1980 a 31/12/2019
+Os dados listados abaixo são os que encontram-se digitados no BDMEP
+Hora em UTC
+--------------------
+Obs.: Os dados aparecem separados por ; (ponto e vírgula) no formato txt.
+      Para o formato planilha XLS, siga as instruções
+--------------------
+Estacao;Data;Hora;Precipitacao;TempMaxima;TempMinima;Insolacao;Umidade Relativa Media;Velocidade do Vento Media;
+83222;17/01/2003;0000;;33.3;;2.1;68.25;3.333333;
+83222;17/01/2003;1200;0;;22.7;;;;
+83222;18/01/2003;0000;;32.7;;8.6;66.75;4.3;
+83222;18/01/2003;1200;0;;24.7;;;;
+83222;19/01/2003;0000;;35.3;;9.9;59.75;2.6;
+83222;19/01/2003;1200;0;;22.6;;;;
+83222;20/01/2003;0000;;33.9;;8.4;63;4.266667;
+83222;20/01/2003;1200;0;;23.7;;;;
+83222;21/01/2003;0000;;32.5;;5.2;71.25;4.8;
+83222;21/01/2003;1200;0;;23.5;;;;
