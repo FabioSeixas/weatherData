@@ -39,10 +39,6 @@ combine = function(x, y, add_cols = FALSE, add_rows = FALSE){
                 "values filled."))
 
   # Add columns
-
-  # NOT WORKING!
-  # combine_sources(xavier, auto, add_columns = T)
-  # DIFFERENT LENGTH VECTORS
   if(add_cols){
     log_vec = !(names(y_adj) %in% names(x))
     if(sum(log_vec)){
