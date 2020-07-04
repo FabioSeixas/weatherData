@@ -1,6 +1,7 @@
 
 
 #' Title
+#' @import rlang
 #' @export
 monthly_diff = function(x, y, var, fun){
 
@@ -12,7 +13,6 @@ monthly_diff = function(x, y, var, fun){
                      na.rm = T)
 
   x %>%
-    select(Data, !!var) %>%
     group_by(year = year(Data),
              month = month(Data)) %>%
     summarise(from_x = eval(fun,
@@ -20,7 +20,6 @@ monthly_diff = function(x, y, var, fun){
 
 
   y %>%
-    select(Data, !!var) %>%
     group_by(year = year(Data),
              month = month(Data)) %>%
     summarise(from_y = eval(fun,
