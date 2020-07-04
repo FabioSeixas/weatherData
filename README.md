@@ -5,7 +5,7 @@ A tool to merge tabular climate data from different sources
 
 If you use [INMET](http://www.inmet.gov.br/portal/) data you know the amount of work it takes to have data enough clean. 
 
-Gaps are very often and values can be very far from the real value.
+Gaps are very common and values can be far away from the real value.
 
 Visual checking is often required so as validation.
 
@@ -21,7 +21,7 @@ It will be done using three sources (if it is available):
 
 ### Actual Development
 
-Until now it's possible to read data from automatic weather station as `.xls`. Example `.xls` files are [attached](https://github.com/FabioSeixas/weatherData/tree/master/inst/extdata). 
+Until now it's possible to read data from automatic weather station as `.xls`. Example `.xls` files are [attached](https://github.com/FabioSeixas/weatherData/tree/master/inst/extdata/xls). 
 
 ``` r
 install.packages("devtools")
