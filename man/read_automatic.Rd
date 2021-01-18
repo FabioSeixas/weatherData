@@ -4,7 +4,7 @@
 \alias{read_automatic}
 \title{Title}
 \usage{
-read_automatic(directory, dates_complete = FALSE)
+read_automatic(directory, delim = ",", dates_complete = FALSE)
 }
 \description{
 Title

@@ -4,7 +4,7 @@
 \alias{read_conventional}
 \title{Title}
 \usage{
-read_conventional(directory, dates_complete = FALSE)
+read_conventional(directory, skip = 0, delim = ",", dates_complete = FALSE)
 }
 \description{
 Title

@@ -3,11 +3,10 @@
 #' @import tidyr
 #' @import readxl
 #' @export
-read_automatic = function(directory, dates_complete = FALSE){
+read_automatic = function(directory, delim = ',', dates_complete = FALSE){
 
   for(data_file in dir(directory)){
-    process_xls_data(paste0(directory, "\\",
-                        data_file)) -> data
+    start_data_processing(paste0(directory, "\\", data_file), delim) -> data
 
     final_data = tryCatch({
       left_join(data,
@@ -29,6 +28,16 @@ read_automatic = function(directory, dates_complete = FALSE){
   return(final_data)
 }
 
+start_data_processing = function(file, delim) {
+  if (str_ends(file, 'xls')) {
+    return (process_xls_data(file))
+  }
+  if (str_ends(file, 'csv')) {
+    return (process_csv_data(file, delim))
+  }
+
+}
+
 process_xls_data = function(file){
 
   data = read_xls(file,
@@ -41,6 +50,39 @@ process_xls_data = function(file){
 
   message(paste("Data de início dos dados:",
               format(data_inicio, "%d de %B de %Y")))
+
+  origin = as.Date(data_inicio) - as.integer(data[[2, 1]])
+
+  # Ajustes
+  data = data[-1,]
+  names(data)[1] = "Data"
+
+  # Variáveis
+  vars = vars_list_procedure(data)
+
+  # Extrair variáveis
+  new_data = tibble(Data = data$Data) %>%
+    mutate(Data = as.Date(as.integer(Data), origin = origin))
+
+  for(variable in vars){
+    message(paste("Adicionando", variable, "a tabela"))
+    new_data[variable] = extrair_var(data, variable, origin)
+  }
+
+  # Colocar nomes das colunas
+  names(new_data) = c("Data", names(vars))
+
+  return(new_data)
+}
+
+process_csv_data = function(file, delim){
+
+  data = read_delim(file, delim)
+
+  data_inicio = data[[1, 1]]
+
+  message(paste("Data de início dos dados:",
+                format(data_inicio, "%d de %B de %Y")))
 
   origin = as.Date(data_inicio) - as.integer(data[[2, 1]])
 

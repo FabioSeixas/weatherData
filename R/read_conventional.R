@@ -3,9 +3,9 @@
 #' @import tidyr
 #' @import readr
 #' @export
-read_conventional = function(directory, dates_complete = FALSE){
+read_conventional = function(directory, skip = 0, delim = ',', dates_complete = FALSE){
 
-  read_delim(directory, skip = 16, delim = ";") %>%
+  read_delim(directory, skip = skip, delim = delim) %>%
     mutate(Data = lubridate::dmy(Data)) %>%
     group_by(Data) %>%
     summarise(prec = sum(Precipitacao, na.rm = T),
